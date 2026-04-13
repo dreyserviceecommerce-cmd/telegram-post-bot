@@ -8,9 +8,36 @@ CHAT_IDS = [x.strip() for x in os.getenv("CHAT_IDS", "").split(",") if x.strip()
 INTERVAL = int(os.getenv("POST_INTERVAL_MINUTES", "1"))
 
 MESSAGES = [
-    "Need 3CX setup or call system?\nDM 👉 @didnumberforspoofing",
-    "SIP trunk + DID numbers available 🌍\nMessage 👉 @didnumberforspoofing",
-    "IVR + Call queue + 3CX setup\nInbox 👉 @didnumberforspoofing",
+    "🚀 CALL CENTER SETUP | VOIP | IVR SOLUTIONS
+
+I provide complete call center setup with:
+
+✅ DID Numbers (Multiple Countries)
+✅ SIP Trunk Setup
+✅ IVR (Interactive Voice Response)
+✅ Call Queue Configuration
+✅ 3CX Setup (Users, Routing, Queues)
+✅ Automation & Bot Integration
+
+💡 Perfect for:
+• Customer Support Teams
+• Sales Call Centers
+• Business Phone Systems
+• VoIP & Telecom Projects
+
+🌍 Countries Available:
+USA 🇺🇸 | Canada 🇨🇦 | UK 🇬🇧 | Australia 🇦🇺 | Europe 🇪🇺 | Asia 🌏 & more
+
+⚙️ Services Include:
+• 3CX Installation & Configuration
+• IVR Menu Setup (Multi-level)
+• Call Routing & Queue Setup
+• DID & SIP Integration
+• Telegram / Automation Bot Integration (Optional)
+
+📩 Message me to get started
+👉 @Ledgerspoofing",
+    
 ]
 
 async def main():
