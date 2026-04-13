@@ -4,13 +4,13 @@ import random
 from telegram import Bot
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHAT_IDS = os.getenv("CHAT_IDS").split(",")
-INTERVAL = int(os.getenv("POST_INTERVAL_MINUTES", "5"))
+CHAT_IDS = [x.strip() for x in os.getenv("CHAT_IDS", "").split(",") if x.strip()]
+INTERVAL = int(os.getenv("POST_INTERVAL_MINUTES", "1"))
 
 MESSAGES = [
     "Need 3CX setup or call system?\nDM 👉 @didnumberforspoofing",
     "SIP trunk + DID numbers available 🌍\nMessage 👉 @didnumberforspoofing",
-    "IVR + Call queue + 3CX setup\nInbox 👉 @didnumberforspoofing"
+    "IVR + Call queue + 3CX setup\nInbox 👉 @didnumberforspoofing",
 ]
 
 async def main():
@@ -20,10 +20,10 @@ async def main():
         for chat_id in CHAT_IDS:
             try:
                 await bot.send_message(chat_id=int(chat_id), text=random.choice(MESSAGES))
+                print(f"Sent to {chat_id}")
             except Exception as e:
                 print(repr(e))
-
-            await asyncio.sleep(10)
+            await asyncio.sleep(5)
 
         await asyncio.sleep(INTERVAL * 60)
 
