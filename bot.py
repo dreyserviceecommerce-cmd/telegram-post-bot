@@ -5,7 +5,7 @@ from telegram import Bot
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_IDS = os.getenv("CHAT_IDS").split(",")
-INTERVAL = int(os.getenv("POST_INTERVAL_MINUTES", "60"))
+INTERVAL = int(os.getenv("POST_INTERVAL_MINUTES", "5"))
 
 MESSAGES = [
     "Need 3CX setup or call system?\nDM 👉 @didnumberforspoofing",
@@ -25,6 +25,6 @@ async def main():
 
             await asyncio.sleep(10)
 
-        await asyncio.sleep(INTERVAL * 60)
+        await asyncio.sleep(INTERVAL * 5)
 
 asyncio.run(main())
