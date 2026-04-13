@@ -21,10 +21,10 @@ async def main():
             try:
                 await bot.send_message(chat_id=int(chat_id), text=random.choice(MESSAGES))
             except Exception as e:
-                print(e)
+                print(repr(e))
 
             await asyncio.sleep(10)
 
-        await asyncio.sleep(INTERVAL * 5)
+        await asyncio.sleep(INTERVAL * 60)
 
 asyncio.run(main())
